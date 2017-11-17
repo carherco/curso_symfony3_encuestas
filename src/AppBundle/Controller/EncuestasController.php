@@ -13,9 +13,9 @@ use \AppBundle\Service\EncuestasService;
 class EncuestasController extends Controller
 {
   /**
-     * @Route("/", name="encuestas_index")
+     * @Route("/demo", name="encuestas_demo")
      */
-    public function indexAction(EncuestasService $encuestasService)
+    public function xxxAction(EncuestasService $encuestasService)
     {
       $asignaturas = $encuestasService->getAsignaturasPlan('01AE');
       dump($asignaturas);
@@ -33,22 +33,21 @@ class EncuestasController extends Controller
       
 //      exit;
       
-      return $this->render('encuestas/index.html.twig', array(
+      return $this->render('encuestas/demo.html.twig', array(
           'bloque' => $bloque,
       )); 
     }
     
-    
-    public function xxxAction(EncuestasService $encuestasService)
+    /**
+     * @Route("/", name="encuestas_index")
+     */
+    public function indexAction(EncuestasService $encuestasService)
     {
-      //Sección recoger la request
+      $encuestas = $encuestasService->getEncuestas();
       
-      
-      // Llamar a servicios
-      
-      
-      // Llamar a la vista
-      
+      return $this->render('encuestas/index.html.twig', array(
+          'encuesta' => $encuestas,
+      )); 
       
     }
 }
