@@ -37,4 +37,18 @@ class EncuestasController extends Controller
           'bloque' => $bloque,
       )); 
     }
+    
+    
+    public function xxxAction(EncuestasService $encuestasService)
+    {
+      //Sección recoger la request
+      
+      
+      // Llamar a servicios
+      
+      
+      // Llamar a la vista
+      
+      
+    }
 }

@@ -41,6 +41,8 @@ class EncuestasService {
       curl_setopt($ch, CURLOPT_URL, $url);
       curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json')); // Assuming you're requesting JSON
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);  
+      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0); 
 
       $content = curl_exec($ch);
       $data = json_decode($content);
@@ -57,7 +59,9 @@ class EncuestasService {
       curl_setopt($ch, CURLOPT_URL, $url);
       curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json')); // Assuming you're requesting JSON
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
+      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);  
+      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0); 
+      
       $content = curl_exec($ch);
       $data = json_decode($content);
       
