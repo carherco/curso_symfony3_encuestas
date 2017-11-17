@@ -15,7 +15,7 @@ class EncuestasController extends Controller
   /**
      * @Route("/demo", name="encuestas_demo")
      */
-    public function xxxAction(EncuestasService $encuestasService)
+    public function demoAction(EncuestasService $encuestasService)
     {
       $asignaturas = $encuestasService->getAsignaturasPlan('01AE');
       dump($asignaturas);
@@ -47,6 +47,32 @@ class EncuestasController extends Controller
       
       return $this->render('encuestas/index.html.twig', array(
           'encuestas' => $encuestas,
+      )); 
+      
+    }
+    
+    /**
+     * @Route("/{id}", name="encuestas_empezar")
+     */
+    public function empezarAction(EncuestasService $encuestasService, $id)
+    {
+      $encuesta = $encuestasService->getEncuesta($id);
+      
+      return $this->render('encuestas/empezar.html.twig', array(
+          'encuesta' => $encuesta,
+      )); 
+      
+    }
+    
+    /**
+     * @Route("/{id}/bloque/{ordenbloque}", name="encuestas_bloque")
+     */
+    public function bloqueAction(EncuestasService $encuestasService, $id, $ordenbloque)
+    {
+      $bloque = $encuestasService->getBloqueEncuesta($id,$ordenbloque);
+      
+      return $this->render('encuestas/bloque.html.twig', array(
+          'bloque' => $bloque,
       )); 
       
     }

@@ -1,7 +1,3 @@
-Pregunta de tipo {{pregunta.id}}
-
 {% for repuesta in pregunta.respuestas %}
-    
-    <p>Respuesta: {{repuesta.descripcion}}</p>
-    
+    <input type="radio" name="" value="{{repuesta.valor}}" required> {{repuesta.descripcion}}<br>  
 {% endfor %}

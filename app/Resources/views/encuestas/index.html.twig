@@ -4,9 +4,12 @@
   
   {% for encuesta in encuestas %}
   
-    <div>{{encuesta.descripcion}}</div>
+    <div>
+      {{encuesta.descripcion}}
+      <a href="{{ path('encuestas_empezar', {'id': encuesta.id}) }}">Empezar</a>
+    </div>
     
   {% endfor %}
   
   
-{% endblock %}
+{% endblock %} 

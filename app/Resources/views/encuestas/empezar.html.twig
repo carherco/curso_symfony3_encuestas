@@ -1,0 +1,10 @@
+{% extends 'public.html.twig' %}
+
+{% block body %}
+  
+  Esta encuesta no te llevará más de 5 minutos.
+  
+  <a href="{{ path('encuestas_bloque', {'id': encuesta.id, 'ordenbloque': 1}) }}">Empezar</a>
+  
+  
+{% endblock %} 
