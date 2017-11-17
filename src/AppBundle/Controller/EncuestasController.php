@@ -46,7 +46,7 @@ class EncuestasController extends Controller
       $encuestas = $encuestasService->getEncuestas();
       
       return $this->render('encuestas/index.html.twig', array(
-          'encuesta' => $encuestas,
+          'encuestas' => $encuestas,
       )); 
       
     }

@@ -1,23 +1,10 @@
 {% extends 'public.html.twig' %}
 
 {% block body %}
-  <h1>Encuesta {{bloque.encuesta.descripcion}}</h1>
   
-  <p>Bloque {{bloque.descripcion}}</p>
+  {% for encuesta in encuestas %}
   
-  {% for pregunta in bloque.preguntas %}
-    
-    <p>Pregunta: {{pregunta.descripcion}}</p>
-    
-    {% if pregunta.tipo.id == 1 %}
-        {{ include('tipospreguntas/tipo1.html.twig', { 'pregunta': pregunta }) }}
-    {% elseif pregunta.tipo.id == 2 %}
-        {{ include('tipospreguntas/tipo2.html.twig', { 'pregunta': pregunta }) }}
-    {% elseif pregunta.tipo.id == 3 %}
-        {{ include('tipospreguntas/tipo3.html.twig', { 'pregunta': pregunta }) }}
-    {% else %}
-        Pregunta sin tipo conocido
-    {% endif %}
+    <div>{{encuesta.descripcion}}</div>
     
   {% endfor %}
   

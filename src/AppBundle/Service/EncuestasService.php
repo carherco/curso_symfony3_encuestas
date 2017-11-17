@@ -111,6 +111,17 @@ class EncuestasService {
     }
     
     /**
+     * Obtiene todas las encuestas
+     * 
+     * @return Array
+     */
+    public function getEncuestas() {   
+      $encuestas = $this->em->getRepository(Entity\Encuesta::class)->findAll();
+
+      return $encuestas;
+    }
+    
+    /**
      * Obtiene una encuesta
      * 
      * @param integer $id
