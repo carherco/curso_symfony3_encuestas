@@ -17,11 +17,11 @@ class EncuestasController extends Controller
      */
     public function indexAction(EncuestasService $encuestasService)
     {
-//      $asignaturas = $encuestasService->getAsignaturasPlan('01AE');
-//      dump($asignaturas);
+      $asignaturas = $encuestasService->getAsignaturasPlan('01AE');
+      dump($asignaturas);
       
-//      $asignatura = $encuestasService->getAsignatura('01AE','13000174');
-//      dump($asignatura);
+      $asignatura = $encuestasService->getAsignatura('01AE','13000174');
+      dump($asignatura);
       
       $encuesta = $encuestasService->getEncuesta(1);
       dump($encuesta);

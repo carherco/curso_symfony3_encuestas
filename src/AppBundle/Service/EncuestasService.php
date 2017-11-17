@@ -75,7 +75,7 @@ class EncuestasService {
       
       $asignaturas = array();
       foreach($data as $item) {
-        $asig = new Asignatura();
+        $asig = new Entity\Asignatura();
         $asig->setCodigo($item->codigo)
              ->setNombre($item->nombre)
              ->setNombreIngles($item->nombre_ingles)
@@ -97,7 +97,7 @@ class EncuestasService {
     public function getAsignatura($codigo,$plan) {    
       $data = $this->apigetAsignatura($codigo,$plan);   
       
-      $asignatura = new Asignatura();
+      $asignatura = new Entity\Asignatura();
       $asignatura ->setCodigo($data->codigo)
                   ->setNombre($data->nombre)
                   ->setNombreIngles($data->nombre_ingles)
